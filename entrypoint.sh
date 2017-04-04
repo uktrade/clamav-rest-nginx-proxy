@@ -27,11 +27,11 @@ EOF
 
 cat <<EOF >>/etc/nginx/nginx.conf
 
-upstream clamav_rest {
-    server ${PROXY_TARGET}:${TARGET_PORT};
-}
-
 http {
+  upstream clamav_rest {
+      server ${PROXY_TARGET}:${TARGET_PORT};
+  }
+
   access_log /var/log/nginx/access.log;
   error_log /var/log/nginx/error.log;
 
@@ -48,6 +48,8 @@ http {
     set_real_ip_from 172.16.0.0/20;
     set_real_ip_from 192.168.0.0/16;
     set_real_ip_from 10.0.0.0/8;
+
+    client_max_body_size 128M;
   
     location / {
         proxy_pass http://clamav_rest;
