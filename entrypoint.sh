@@ -35,6 +35,8 @@ http {
   access_log /var/log/nginx/access.log;
   error_log /var/log/nginx/error.log;
 
+  server_tokens off;
+
   server {
     listen 443 ssl;
     server_name localhost;
