@@ -1,0 +1,3 @@
+---
+applications:
+  - docker: quay.io/uktrade/clamav-rest-nginx-proxy
