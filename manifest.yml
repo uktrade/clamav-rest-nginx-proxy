@@ -1,3 +1,4 @@
 ---
 applications:
-  - docker: quay.io/uktrade/clamav-rest-nginx-proxy:develop
+  - docker:
+      image: quay.io/uktrade/clamav-rest-nginx-proxy:develop
