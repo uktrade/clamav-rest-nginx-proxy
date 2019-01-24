@@ -6,7 +6,6 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 COPY entrypoint.sh /entrypoint.sh
 
-EXPOSE 80
 EXPOSE 443
 
 CMD ["/entrypoint.sh"]
